@@ -120,7 +120,7 @@ try {
 } catch (\Throwable $th) {
   $conn->rollback();
  header("Location:congrats.php?goto_page=add-users.php&message=warning--Something went wrong try leter");
-    exit;
+  exit;
 }
 
 }
@@ -132,6 +132,7 @@ $stmt->execute();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="assets/js/sweet_alert.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

@@ -9,6 +9,5 @@ $deleteQuery = "DELETE FROM $table WHERE id = $id;";
 $stmt = $conn->prepare($deleteQuery);
 $stmt->execute();
 header("Location: $goto_page?msg=deleted");
-exit;
 
 ?>
