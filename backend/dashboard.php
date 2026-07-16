@@ -1,12 +1,20 @@
 <?php
+include 'config/conn.php';
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("location: index.php");
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style> 
+    .card{
+      width: 100%;
+    }
+
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -61,19 +69,51 @@ include '../config/css-links.php';
         
         <div class="content-wrapper">
           <div class="content">                
-            
-      
-            </div> 
-        </div>
-        
-          <!-- Footer -->
-         <?php
-         include 'config/footer.php';
-         ?>
+    
+       <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title">
+                  <?php $select = "SELECT COUNT(*) FROM users";
+                  $stmt = $conn->prepare($select);
+                  $stmt->execute();
+                  
+                  $row = $stmt->fetchColumn();
+                  ?>
+                  <i class="fa fa-user-plus"></i><h1><?php echo $row?></h1>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                card 2
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                card 3
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
       </div>
     </div>
-           
+     <?php
+         include 'config/footer.php';
+         ?>
+</div>
+</div>
+
+
     <!-- JS LINKS -->
        <?php
        include 'config/js-links.php'; 
