@@ -73,29 +73,35 @@ include '../config/css-links.php';
        <div class="container">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card border-0 shadow-lg rounded-4">
             <div class="card">
               <div class="card-body">
                 <div class="card-title">
-                  <p>TOTAL USERS</p>
+                  
                   <?php $select = "SELECT COUNT(*) FROM users";
                   $stmt = $conn->prepare($select);
                   $stmt->execute();
                   
                   $row = $stmt->fetchColumn();
                   ?>
-                <h1><?php echo $row?></h1>
+                <div class="d-flex justify-content-center align-item-center">
+                  <i class="fa solid fa-user fa-4x text-primary"></i>
+                  <h1>
+                  <span><?php echo $row?></span>
+                  </h1>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </div> 
 
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-
-         
+            <div class="card border-0 shadow-lg rouded-4">
             <div class="card">
               <div class="card-body">
                 <div class="card-title">
-                <p>TOTAL ORDERS</p>
+                   
                 <?php
                 $countOrder = "SELECT COUNT(*) FROM orders";
                 $stmt = $conn->prepare($countOrder);
@@ -103,23 +109,20 @@ include '../config/css-links.php';
                 $row = $stmt->fetchColumn();
 
                 ?>
-              
-                <h1><?php echo $row?></h1>
-                
+                <div class="d-flex justify-content-center align-item-center">
+              <i class="fa solid fa-cart-shopping fa-4x text-success"></i>
+              <h1>
+                <span><?php echo $row?></span>
+                </h1>
               </div>
             </div>
+              </div>
               </div>
           </div>
+          
 
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-              <div class="card-body">
-                <div class="card-title">
-                    
-                </div>
-              
-              </div>
-            </div>
+
+          
           </div>
         </div>
        </div>

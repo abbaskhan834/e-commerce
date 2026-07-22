@@ -15,7 +15,7 @@
                 
                   <li
                    class="active">
-                    <a class="sidenav-item-link" href="index.php">
+                    <a class="sidenav-item-link" href="dashboard.php">
                       <i class="mdi mdi-briefcase-account-outline"></i>
                       <span class="nav-text">Ecommerce Dashboard</span>
                     </a>
